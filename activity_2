@@ -1,0 +1,36 @@
+balance = 1000
+
+while True:
+    print("\nD - Deposit")
+    print("W - Withdraw")
+    print("Q - Quit")
+
+    choice = input("Enter choice: ").upper()
+
+    if choice == "D":
+        amount = float(input("Enter deposit amount: "))
+
+        if amount > 0:
+            balance += amount
+            print("Deposit successful")
+        else:
+            print("Invalid amount")
+
+    elif choice == "W":
+        amount = float(input("Enter withdrawal amount: "))
+
+        if amount <= 0:
+            print("Invalid amount")
+        elif amount <= balance:
+            balance -= amount
+            print("Withdrawal successful")
+        else:
+            print("Insufficient balance")
+
+    elif choice == "Q":
+        break
+
+    else:
+        print("Invalid choice")
+
+print("Final balance: Rs.", round(balance, 2))
