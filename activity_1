@@ -1,0 +1,16 @@
+attended = int(input("Classes attended: "))
+total = int(input("Total classes: "))
+
+if total <= 0 or attended < 0 or attended > total:
+    print("Invalid input")
+else:
+    extra = 0
+
+    while attended * 100 / total < 75:
+        attended += 1
+        total += 1
+        extra += 1
+
+    print("Extra classes to attend:", extra)
+    print("Attendance after attending them:",
+          round(attended * 100 / total, 2), "%")
