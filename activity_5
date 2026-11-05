@@ -1,0 +1,23 @@
+key = ["A", "B", "C", "D", "A"]
+answers = []
+
+for i in range(5):
+    answer = input("Enter answer for question " + str(i + 1) + ": ").upper()
+    answers.append(answer)
+
+correct = 0
+incorrect = 0
+unanswered = 0
+
+for i in range(5):
+    if answers[i] == "":
+        unanswered += 1
+    elif answers[i] == key[i]:
+        correct += 1
+    else:
+        incorrect += 1
+
+print("Correct answers:", correct)
+print("Incorrect answers:", incorrect)
+print("Unanswered:", unanswered)
+print("Final score:", correct, "/ 5")
