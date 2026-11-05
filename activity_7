@@ -1,0 +1,27 @@
+appliances = ["Fan", "Light", "TV"]
+readings = []
+
+for appliance in appliances:
+    daily = []
+
+    print("Enter 7 daily readings for", appliance)
+
+    for day in range(7):
+        units = float(input("Day " + str(day + 1) + ": "))
+        daily.append(units)
+
+    readings.append(daily)
+
+highest = -1
+highest_appliance = ""
+
+for i in range(len(appliances)):
+    total = sum(readings[i])
+
+    print(appliances[i], "weekly usage:", total, "units")
+
+    if total > highest:
+        highest = total
+        highest_appliance = appliances[i]
+
+print("Highest consumption:", highest_appliance)
