@@ -1,0 +1,29 @@
+prepared_list = []
+served_list = []
+
+for day in range(1, 4):
+    print("Day", day)
+
+    prepared = int(input("Meals prepared: "))
+    served = int(input("Meals served: "))
+
+    prepared_list.append(prepared)
+    served_list.append(served)
+
+for i in range(3):
+    prepared = prepared_list[i]
+    served = served_list[i]
+
+    if prepared <= 0 or served < 0 or served > prepared:
+        print("Day", i + 1, "- Invalid input")
+    else:
+        leftover = prepared - served
+        waste = leftover / prepared * 100
+
+        print("Day", i + 1, "Leftover:", leftover)
+        print("Wastage:", round(waste, 2), "%")
+
+        if waste > 10:
+            print("Status: High Waste")
+        else:
+            print("Status: Acceptable")
