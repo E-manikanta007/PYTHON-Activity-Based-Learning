@@ -1,0 +1,19 @@
+products = [
+    ("Pen", 10, 20),
+    ("Notebook", 50, 3),
+    ("Pencil", 5, 4)
+]
+
+total_value = 0
+
+for name, price, quantity in products:
+    value = price * quantity
+    total_value += value
+
+    print("Product:", name)
+    print("Stock value: Rs.", value)
+
+    if quantity < 5:
+        print("Status: Low stock")
+
+print("Total inventory value: Rs.", total_value)
