@@ -1,0 +1,28 @@
+marks = []
+
+for i in range(3):
+    student_marks = []
+
+    print("Enter marks for student", i + 1)
+
+    for j in range(3):
+        mark = int(input("Subject " + str(j + 1) + ": "))
+        student_marks.append(mark)
+
+    marks.append(student_marks)
+
+highest = -1
+topper = 0
+
+for i in range(3):
+    total = sum(marks[i])
+    average = total / 3
+
+    print("Student", i + 1, "Total:", total, "Average:", average)
+
+    if total > highest:
+        highest = total
+        topper = i + 1
+
+print("Topper: Student", topper)
+print("Highest total:", highest)
